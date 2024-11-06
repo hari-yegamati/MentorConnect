@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professor Page</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+        body{
+            background: linear-gradient(to top, rgba(0,0,0,0.6)50%,rgba(0,0,0,0.6)50%), url(/pexels-vanessa-garcia-6325975.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment:fixed;
+        }
+
+        header {
+            font-family: Arial, sans-serif;
+            background-color: transparent;
+            color: #fff;
+            padding: 10px 40px 10px 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            display: grid;
+            align-items: center;
+            height: 4.3rem;
+            padding-top: 1rem;
+            backdrop-filter: blur(20px);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav div h1 a{
+            text-decoration: none;
+            color: #ff7200;
+            font-size: 2.5rem;
+            margin-left: 1.5rem;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 2rem;
+        }
+        nav ul li a{
+            color: white;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            padding: 0.3rem;
+            border: none;
+            transition: 0.4s ease-in-out;
+        }
+        nav ul li a:hover{
+            color: #ff7200;
+        }
+        nav ul li:last-child {
+            margin-right: 1rem;
+        }
+        .u{
+            margin-top: 7rem;
+        }
+
+        .professor-container {
+            display: flex;
+            justify-content:space-evenly;
+            align-items: center;
+            border: 2px solid white;
+            border-radius: 1rem;
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+        
+        .professor-image {
+            max-width: 200px;
+            height: auto;
+            margin-right: 20px;
+        }
+        
+        .professor-details {
+            font-size: 1.3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .professor-details ul li{
+            margin-left: 2rem;
+        }
+        button{
+            background-color: #24a0ed;
+        }
+        .menu{
+            margin-right: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <h1><a href="/home">MentorConnect</a></h1>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="/new-project">New Project</a></li>
+                    <li><a href="/profs">Professors</a></li>
+                    <li><a href="/my-projects">My Projects</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="u">
+        <div class="professor-container" th:each="prof : ${profs}">
+            <img class="professor-image" th:if="${prof.image!=null}" th:src="'Images/'+${prof.image}"/>
+            <div class="professor-details">
+                <p>Professor Name: <span  th:text="${prof.username}"></span></p>
+                <p>Technical Skills:</p>
+                <ul>
+                    <li th:text="${prof.skills}"></li>
+                </ul>
+                <p>Department: <span th:text="${prof.department}"></span></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

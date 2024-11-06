@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cont{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            box-shadow: 0.1rem 0.1rem 0.5rem black;
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+        .cont .items{
+            display: flex;
+            gap: 1rem;
+        }
+        .cont h1{
+            font-size: 2.5rem;
+        }
+        button{
+            font-size: medium;
+            padding: 0.5rem;
+            background-color: cadetblue;
+            border-radius: 0.5rem;
+            border: none;
+        }
+        button a{
+            text-decoration: none;
+            color:black;
+        }
+    </style>
+</head>
+<body>
+    <div class="cont">
+    <h1>welcome Hari<span th:text="${user.username}"></span></h1>
+    <h1>password<span th:text="${user.password}"></span></h1>
+        <div class="items">
+            <button><a href="/newproj">newproj</a></button>
+            <button><a href="/profs">professors</a></button>
+        </div>
+    </div>
+</body>
+</html>

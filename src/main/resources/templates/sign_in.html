@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <style>
+        fieldset{
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 40%;
+            gap: 1rem;
+            border: none;
+            padding: 1rem;
+            box-shadow: 0.1rem 0.1rem 0.5rem black;
+            text-transform: capitalize;
+        }
+        fieldset p,h2{
+            text-align: center;
+        }
+        fieldset div{
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            text-transform: uppercase;
+        }
+        input{
+            height: 1.8rem;
+            border-radius: 0.3rem;
+            border: 1px solid gray;
+        }
+        input[type=submit]{
+            color: black;
+            background-color: cadetblue;
+        }
+
+    </style>
+</head>
+<body>
+   
+    <form action="login" method="Post">
+        <fieldset>
+            <h2>Login</h2>
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="username">
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="password">
+        </div>
+        <input type="submit">
+        <p>new here?<a href="signup">register</a></p>
+        <h2 th:text="${msg}" style="color: red;"></h2>
+    </fieldset>
+    </form>
+</body>
+</html>

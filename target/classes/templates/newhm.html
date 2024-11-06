@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MentorMatch</title>
+    <!-- Add your CSS links here -->
+    <style>
+        /* Add your custom styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: cadetblue;
+            color: #fff;
+            padding: 10px 20px;
+        }
+        nav div h1 a{
+            text-decoration: none;
+            color: white;
+            font-size: 2rem;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 2rem;
+        }
+        nav ul li a{
+            color: white;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            padding: 0.3rem;
+            border: none;
+        }
+        nav ul li a:hover{
+            background-color: #2c4d36;
+        }
+        nav ul li:last-child {
+            margin-right: 1rem;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        main h1{
+            font-size: 2rem;
+        }
+        main p{
+            font-size: larger;
+        }
+        section {
+            padding: 20px;
+            border-radius: 1rem;
+            /*box-shadow: 0.1rem 0.2rem 1rem black; */
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            color: #555;
+            line-height: 1.6;
+        }
+        .cta-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 3rem;
+        }
+        .cta-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition:0.3s;
+        }
+        .cta-button:hover {
+            background-color: #007bff;
+            transform: scale(1.05);
+        }
+        footer {
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <h1><a href="/home">MentorMatch</a></h1>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="/new-project">New Project</a></li>
+                    <li><a href="/profs">Professors</a></li>
+                    <li><a href="/my-projects">My Projects</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Welcome to MentorMatch <span th:text="${user.username}"></h1>
+            <p>Here, you can collaborate with professors and work on exciting projects.</p>
+            <p>Choose an option to get started.</p>
+            <div class="cta-buttons">
+                <a href="/new-project" class="cta-button">Start a New Project</a>
+                <a href="/profs" class="cta-button">Browse Professors</a>
+                <a href="/my-projects" class="cta-button">View My Projects</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><a>Terms and Conditions</a> | &copy; 2024 MentorMatch</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        .cont{
+            padding: 1rem;
+            gap: 1rem;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid black;
+        }
+        .professor{
+            width: 70%;
+            padding: 1rem;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            border: 1px solid black;
+        }
+        label{
+            font-size: 1.5rem;
+        }
+        
+    </style>
+    </head>
+    <body>
+        <div class="cont">
+            <div class="professor"  th:each="prof : ${prfs}" >
+                <div class="username">
+                    <label for="">Name:</label>
+                    <h3 th:text="${prof.username}"></h3>
+                </div>
+                <div class="username">
+                    <label for="">Department:</label>
+                    <h3 th:text="${prof.department}"></h3>
+                </div>
+                <div class="username">
+                    <label for="">Technical Skills:</label>
+                    <h3 th:text="${prof.lang}"></h3>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <style>
+        fieldset{
+            border: none;
+        }
+        .h{
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 40%;
+            gap: 1rem;
+            padding: 1rem;
+            box-shadow: 0.1rem 0.1rem 0.5rem black;
+            text-transform: capitalize;
+            text-align: center;
+        }
+        button{
+            background-color: cadetblue;
+            width: fit-content;
+            padding: 0.5rem;
+            border-radius:10px;
+        }
+        input{
+            height: 1.8rem;
+            border-radius: 0.3rem;
+            border: 1px solid gray;
+        }
+        input[type=file]{
+            height: auto;
+            width: fit-content;
+        }
+        fieldset div{
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 0.02rem;
+            text-transform: uppercase;
+        }
+        .tick{
+            width: 4rem;
+            height: 4rem;
+            font-size: 2rem;
+            background-color: rgb(91, 199, 91);
+            border-radius: 50%;
+        }
+
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <title>Add Professor</title>
+</head>
+<body>
+    <div class="h">
+<h2>Add Professor</h2>
+<form action="#" th:action="@{/addprof}" th:object="${prof}" method="post" enctype="multipart/form-data">
+   <fieldset>
+    <div> <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username" required placeholder="username"><br>
+    
+    <label for="department">Department:</label><br>
+    <input type="text" id="department" name="department" required placeholder="department"><br>
+    
+    <label for="skills">Skills: </label><br>
+    <input type="text" id="skills" name="skills" required placeholder="eg(c/python/..)"><br>
+    
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required placeholder="Email"><br>
+    
+    <label for="image">Image:</label><br>
+    <input type="file" id="image" name="file" accept="image/*" required><br>
+    
+    <br><button type="submit">Submit</button>
+    </div>
+    </fieldset>
+</form>
+</div>
+</body>
+</html>

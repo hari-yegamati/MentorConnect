@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background: linear-gradient(to top, rgba(0,0,0,0.6)50%,rgba(0,0,0,0.6)50%), url(/pexels-vanessa-garcia-6325975.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment:fixed;
+        }
+        header {
+            font-family: Arial, sans-serif;
+            color: #fff;
+            padding: 26px 40px 10px 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            display: grid;
+            align-items: center;
+            height: 4.3rem;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav div h1 a{
+            text-decoration: none;
+            color: #ff7200;
+            font-size: 2.3rem;
+            margin-left: 2rem;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 2rem;
+        }
+        nav ul li a{
+            color: white;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            padding: 0.3rem;
+            border: none;
+            transition: 0.4s ease-in-out;
+        }
+        nav ul li a:hover{
+            background-color: #ff7200;
+        }
+        nav ul li:last-child {
+            margin-right: 1rem;
+        }
+        .u{
+            margin-top: 7rem;
+        }
+        fieldset{
+            color: white;
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 40%;
+            border: none;
+            padding: 1rem;
+            box-shadow: 0.1rem 0.1rem 0.5rem black;
+            text-transform: uppercase;
+            min-height: fit-content;
+            backdrop-filter: blur(2rem);
+
+        }
+        fieldset div{
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            text-transform: uppercase;
+        }
+        input{
+            height: 1.8rem;
+            border-radius: 0.3rem;
+            border: 1px solid gray;
+        }
+        input[type=submit]{
+            color: black;
+            background-color: cadetblue;
+        }
+        input::placeholder{
+            padding-left: 5px;
+        }
+        .menu{
+            margin-right: 2rem;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <h1><a href="/home">Mentor Connect</a></h1>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="/new-project">New Project</a></li>
+                    <li><a href="/profs">Professors</a></li>
+                    <li><a href="/my-projects">My Projects</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <form action="/project" method="post" th:object="${projectForm}">
+        <fieldset>
+            <br><h2 style="text-align: center;">New project</h2><br><br>
+            <div>
+                <label for="projectName">Project Name:</label>
+                <input type="text" id="projectName" name="projectName" th:field="*{projectName}" required placeholder="projectname"><br><br>
+            </div>
+            <div>
+                <label for="dept">Department:</label>
+                <input type="text" id="dept" name="department" th:field="*{department}" placeholder="your department"><br><br>
+        </div>
+            <div>
+                <label for="language">Language:</label>
+                <input type="text" id="language" name="language" th:field="*{language}" required placeholder="language"><br><br>
+        </div>
+            <input type="submit">
+        </fieldset>  
+    </form>
+</body>
+</html>

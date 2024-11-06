@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Match - Home</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Header Section */
+.bg-image {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 50%), url('pexels-vanessa-garcia-6325975.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.bg-image .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.bg-image .container {
+    position: relative;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Features Section */
+#features .card {
+    border: none;
+    transition: transform 0.3s;
+}
+
+#features .card:hover {
+    transform: translateY(-10px);
+}
+
+.card-body i {
+    color: #007bff;
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Mentor Match</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="bg-image text-white text-center">
+        <div class="overlay"></div>
+        <div class="container">
+            <h1 class="display-4">Welcome to Mentor Match</h1>
+            <p class="lead">Connect with the best mentors and schedule meetings effortlessly.</p>
+            <a href="#" class="btn btn-primary btn-lg">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="card text-center shadow">
+                        <div class="card-body">
+                            <i class="fas fa-user-friends fa-3x mb-3"></i>
+                            <h5 class="card-title">Seamless Mentor-Mentee Matching</h5>
+                            <p class="card-text">Find the perfect mentor based on skills, goals, and interests using our smart matching algorithm.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card text-center shadow">
+                        <div class="card-body">
+                            <i class="fas fa-video fa-3x mb-3"></i>
+                            <h5 class="card-title">Integrated Zoom Scheduling</h5>
+                            <p class="card-text">Schedule and manage Zoom meetings directly within the platform, ensuring effortless collaboration.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card text-center shadow">
+                        <div class="card-body">
+                            <i class="fas fa-lock fa-3x mb-3"></i>
+                            <h5 class="card-title">Secure and Controlled Access</h5>
+                            <p class="card-text">Manage who joins meetings with robust access control, ensuring security and privacy for all users.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="card text-center shadow">
+                        <div class="card-body">
+                            <i class="fas fa-chart-line fa-3x mb-3"></i>
+                            <h5 class="card-title">Progress Tracking</h5>
+                            <p class="card-text">Monitor your mentorship journey with continuous feedback and track progress toward goals.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card text-center shadow">
+                        <div class="card-body">
+                            <i class="fas fa-envelope fa-3x mb-3"></i>
+                            <h5 class="card-title">Automated Notifications</h5>
+                            <p class="card-text">Receive automated email notifications with meeting links, reminders, and follow-up actions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card text-center shadow">
+                        <div class="card-body">
+                            <i class="fas fa-calendar-alt fa-3x mb-3"></i>
+                            <h5 class="card-title">Easy Meeting Management</h5>
+                            <p class="card-text">Effortlessly manage and reschedule meetings directly from the platform's dashboard.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Mentor Match. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

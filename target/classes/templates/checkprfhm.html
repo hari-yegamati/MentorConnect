@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor connect</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url("https://mentornect.co.uk/wp-content/uploads/2021/12/Effective-mentoring-1024x683.jpg");
+            color: #333;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        header {
+            background-color: #333;
+            padding: 10px;
+            color: white;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .abc {
+            padding: 20px;
+            margin: 20px auto;
+            width:100vw;
+            height:100vh;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .content {
+            display: flex;
+            align-items: center;
+        }
+    
+        
+        .text {
+            margin-left: 30px;
+        }
+        
+        h2 {
+            color: orange;
+        }
+        
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+            margin: 20px 0;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .button {
+            background-color: orange;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .button:hover {
+            background-color: darkorange;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Mentor connect</h1>
+            <ul>
+                <li><a href="#">New Projects</a></li>
+                <li><a href="#">Professors</a></li>
+                <li><a href="#">My Projects</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="abc">
+            <div class="content">
+                
+                <div class="text">
+                    <h2>Mentor connect</h2>
+                    <p>
+                        This is a platform designed to connect individuals seeking personal or professional development 
+                        (mentees) with experienced mentors across different fields. Whether you're a student, professional, 
+                        or entrepreneur, Mentor Match provides access to personalized guidance to help you grow in your 
+                        career or life.
+                    </p>
+                    <div class="button">
+                        <button class="button">Start New Project</button>
+                        <button class="button">Browse Professors</button>
+                        <button class="button">View My Projects</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
